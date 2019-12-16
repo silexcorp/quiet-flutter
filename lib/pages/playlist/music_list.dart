@@ -227,12 +227,12 @@ class MusicListHeader extends StatelessWidget {
             ),
             Padding(padding: EdgeInsets.only(left: 4)),
             Text(
-              "播放全部",
+              "Jugar todo",
               style: Theme.of(context).textTheme.body1,
             ),
             Padding(padding: EdgeInsets.only(left: 2)),
             Text(
-              "(共$count首)",
+              "(Total $count Primero)",
               style: Theme.of(context).textTheme.caption,
             ),
             Spacer(),
@@ -292,21 +292,21 @@ class _IconMore extends StatelessWidget {
   List<PopupMenuItem> _buildMenu(BuildContext context) {
     var items = [
       PopupMenuItem(
-        child: Text("下一首播放"),
+        child: Text("Próxima jugada"),
         value: _MusicAction.addToNext,
       ),
       PopupMenuItem(
-        child: Text("收藏到歌单"),
+        child: Text("Agregar a la lista de reproducción"),
         value: _MusicAction.addToPlaylist,
       ),
       PopupMenuItem(
-        child: Text("评论"),
+        child: Text("Comentarios"),
         value: _MusicAction.comment,
       ),
     ];
 
     items.add(PopupMenuItem(
-        child: Text("歌手: ${music.artist.map((a) => a.name).join('/')}",
+        child: Text("Cantante: ${music.artist.map((a) => a.name).join('/')}",
             maxLines: 1),
         //如果所有artist的id为0，那么disable这个item
         enabled: music.artist.fold(0, (c, ar) => c + ar.id) != 0,
@@ -314,13 +314,13 @@ class _IconMore extends StatelessWidget {
 
     if (MusicList.of(context).supportAlbumMenu) {
       items.add(PopupMenuItem(
-        child: Text("专辑"),
+        child: Text("Álbum"),
         value: _MusicAction.album,
       ));
     }
     if (MusicList.of(context).remove != null) {
       items.add(PopupMenuItem(
-        child: Text("删除"),
+        child: Text("Eliminar"),
         value: _MusicAction.delete,
       ));
     }
@@ -358,9 +358,9 @@ class _IconMore extends StatelessWidget {
             return;
           }
           if (succeed) {
-            showSimpleNotification(context, Text("已添加到收藏"));
+            showSimpleNotification(context, Text("Agregado a favoritos"));
           } else {
-            showSimpleNotification(context, Text("收藏歌曲失败!"),
+            showSimpleNotification(context, Text("Error al escuchar canciones favoritas!"),
                 leading: Icon(Icons.error),
                 background: Theme.of(context).errorColor);
           }

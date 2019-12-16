@@ -158,7 +158,7 @@ class _SuggestionOverflowState extends State<SuggestionOverflow> {
             children: <Widget>[
               ListTile(
                 title: Text(
-                  "搜索 : ${widget.query}",
+                  "Buscar : ${widget.query}",
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,
                 ),

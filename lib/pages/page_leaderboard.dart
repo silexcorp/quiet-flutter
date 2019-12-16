@@ -48,7 +48,7 @@ class _LeaderboardPageState extends State<LeaderboardPage> {
     return Scaffold(
       appBar: AppBar(
         leading: BackButton(),
-        title: const Text("排行榜"),
+        title: const Text("Tabla de clasificación"),
       ),
       body: body,
     );
@@ -69,11 +69,11 @@ class _Leaderboard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     List<Widget> widgets = [];
-    widgets.add(_ItemTitle("官方榜"));
+    widgets.add(_ItemTitle("Lista oficial"));
     for (var i = 0; i < 4; i++) {
       widgets.add(_ItemLeaderboard1(data[i]));
     }
-    widgets.add(_ItemTitle("全球榜"));
+    widgets.add(_ItemTitle("Lista global"));
     widgets.add(GridView.builder(
         padding: EdgeInsets.symmetric(horizontal: 8),
         shrinkWrap: true,

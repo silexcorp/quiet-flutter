@@ -15,7 +15,7 @@ class CollectionEmpty extends StatelessWidget {
         Image(image: AssetImage("assets/no_copy_right.png")),
         SizedBox(height: 16),
         Text(
-          "暂无收藏",
+          "Sin favoritos",
           textAlign: TextAlign.center,
         ),
         SizedBox(height: 16),

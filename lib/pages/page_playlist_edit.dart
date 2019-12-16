@@ -24,7 +24,7 @@ class _PlaylistEditPageState extends State<PlaylistEditPage> {
     return Scaffold(
       appBar: AppBar(
         leading: BackButton(),
-        title: Text("编辑歌单信息"),
+        title: Text("Editar información de la lista de reproducción"),
       ),
       body: Builder(builder: (context) {
         return Column(
@@ -40,7 +40,7 @@ class _PlaylistEditPageState extends State<PlaylistEditPage> {
                 padding: EdgeInsets.symmetric(horizontal: 8),
                 child: Row(
                   children: <Widget>[
-                    Expanded(child: Text("更换封面", style: style)),
+                    Expanded(child: Text("Cambiar portada", style: style)),
                     Image(
                         image: NeteaseImage(widget.playlist.coverUrl),
                         height: 56,
@@ -62,7 +62,7 @@ class _PlaylistEditPageState extends State<PlaylistEditPage> {
                 padding: EdgeInsets.symmetric(horizontal: 8),
                 child: Row(
                   children: <Widget>[
-                    Expanded(child: Text("名称", style: style)),
+                    Expanded(child: Text("Nombre", style: style)),
                     Text(widget.playlist.name)
                   ],
                 ),
@@ -80,7 +80,7 @@ class _PlaylistEditPageState extends State<PlaylistEditPage> {
                 padding: EdgeInsets.symmetric(horizontal: 8),
                 child: Row(
                   children: <Widget>[
-                    Expanded(child: Text("标签", style: style)),
+                    Expanded(child: Text("Etiquetas", style: style)),
                     Text("功能未实现", style: Theme.of(context).textTheme.caption)
                   ],
                 ),
@@ -98,7 +98,7 @@ class _PlaylistEditPageState extends State<PlaylistEditPage> {
                 padding: EdgeInsets.symmetric(horizontal: 8),
                 child: Row(
                   children: <Widget>[
-                    Expanded(child: Text("描述", style: style)),
+                    Expanded(child: Text("Descripción", style: style)),
                     Text(widget.playlist.name)
                   ],
                 ),
@@ -147,7 +147,7 @@ class _PlaylistNameEditPageState extends State<_PlaylistNameEditPage> {
     return Scaffold(
       appBar: AppBar(
         leading: BackButton(),
-        title: Text("歌单名称"),
+        title: Text("Nombre de la lista de reproducción"),
         actions: <Widget>[
           FlatButton(
               onPressed: () async {
@@ -162,7 +162,7 @@ class _PlaylistNameEditPageState extends State<_PlaylistNameEditPage> {
                   } else {
                     setState(() {
                       widget.playlist.name = name;
-                      error = "修改失败";
+                      error = "Edición fallida";
                     });
                   }
                 } catch (msg) {
@@ -172,7 +172,7 @@ class _PlaylistNameEditPageState extends State<_PlaylistNameEditPage> {
                   });
                 }
               },
-              child: Text("保存"),
+              child: Text("Guardar"),
               textColor: Theme.of(context).primaryTextTheme.body1.color)
         ],
       ),
@@ -188,7 +188,7 @@ class _PlaylistNameEditPageState extends State<_PlaylistNameEditPage> {
               focusNode: _focusNode,
               textInputAction: TextInputAction.done,
               decoration: InputDecoration(
-                  hintText: "编辑歌单名称",
+                  hintText: "Edite el nombre de la lista de reproducción",
                   errorText: error,
                   suffixIcon: IconButton(
                       icon: Icon(Icons.close),
@@ -197,7 +197,7 @@ class _PlaylistNameEditPageState extends State<_PlaylistNameEditPage> {
                       })),
               validator: (v) {
                 if (v.isEmpty) {
-                  return "歌单名不能为空";
+                  return "El nombre de la canción no puede estar vacío.";
                 }
                 return null;
               },

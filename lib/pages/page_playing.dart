@@ -109,7 +109,7 @@ class _ControllerBar extends StatelessWidget {
       index: state.isPlaying ? 0 : state.isBuffering ? 2 : 1,
       children: <Widget>[
         IconButton(
-            tooltip: "暂停",
+            tooltip: "Pausa",
             iconSize: 40,
             icon: Icon(
               Icons.pause_circle_outline,
@@ -119,7 +119,7 @@ class _ControllerBar extends StatelessWidget {
               quiet.pause();
             }),
         IconButton(
-            tooltip: "播放",
+            tooltip: "Reproducir",
             iconSize: 40,
             icon: Icon(
               Icons.play_circle_outline,
@@ -160,7 +160,7 @@ class _ControllerBar extends StatelessWidget {
               }),
           iconPlayPause,
           IconButton(
-              tooltip: "下一曲",
+              tooltip: "Anterior",
               iconSize: 36,
               icon: Icon(
                 Icons.skip_next,
@@ -170,7 +170,7 @@ class _ControllerBar extends StatelessWidget {
                 quiet.playNext();
               }),
           IconButton(
-              tooltip: "当前播放列表",
+              tooltip: "Siguiente",
               icon: Icon(
                 Icons.menu,
                 color: color,
@@ -888,7 +888,7 @@ class _PlayingTitle extends StatelessWidget {
     return AppBar(
       elevation: 0,
       leading: IconButton(
-          tooltip: '返回上一层',
+          tooltip: 'Regresar al nivel anterior',
           icon: Icon(
             Icons.arrow_back,
             color: Theme.of(context).primaryIconTheme.color,
@@ -931,7 +931,7 @@ class _PlayingTitle extends StatelessWidget {
           itemBuilder: (context) {
             return [
               PopupMenuItem(
-                child: Text("下载"),
+                child: Text("Descargar"),
               ),
             ];
           },

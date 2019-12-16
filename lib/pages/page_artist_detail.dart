@@ -65,7 +65,7 @@ class ArtistSelectionDialog extends StatelessWidget {
         constraints: BoxConstraints(maxHeight: 356),
         child: SimpleDialog(
           title: Container(
-            child: Text("请选择要查看的歌手"),
+            child: Text("Por favor seleccione el artista para ver"),
             constraints: BoxConstraints(
                 minWidth: MediaQuery.of(context).size.width * 0.8),
           ),
@@ -110,13 +110,13 @@ class ArtistDetailPageState extends State<ArtistDetailPage>
         resultVerify: neteaseRepository.responseVerify,
         loadingBuilder: (context) {
           return Scaffold(
-            appBar: AppBar(title: Text("歌手")),
+            appBar: AppBar(title: Text("Cantante")),
             body: Loader.buildSimpleLoadingWidget(context),
           );
         },
         failedWidgetBuilder: (context, result, msg) {
           return Scaffold(
-            appBar: AppBar(title: Text("歌手")),
+            appBar: AppBar(title: Text("歌Cantante手")),
             body: Loader.buildSimpleFailedWidget(context, result, msg),
           );
         },
@@ -158,10 +158,10 @@ class ArtistDetailPageState extends State<ArtistDetailPage>
                           ),
                           forceElevated: innerBoxIsScrolled,
                           bottom: TabBar(tabs: [
-                            Tab(text: "热门单曲"),
-                            Tab(text: "专辑${artist["albumSize"]}"),
-                            Tab(text: "视频${artist["mvSize"]}"),
-                            Tab(text: "艺人信息"),
+                            Tab(text: "Solteros populares"),
+                            Tab(text: "Álbum ${artist["albumSize"]}"),
+                            Tab(text: "Video ${artist["mvSize"]}"),
+                            Tab(text: "Informacion del artista"),
                           ]),
                           actions: <Widget>[
                             IconButton(
@@ -235,9 +235,9 @@ class _PageHotSongsState extends State<_PageHotSongs>
                   SizedBox(width: 8),
                   Icon(Icons.add_box),
                   SizedBox(width: 8),
-                  Expanded(child: Text("收藏热门${widget.musicList.length}单曲")),
+                  Expanded(child: Text("Favorito${widget.musicList.length}Soltero")),
                   FlatButton(
-                      child: Text("多选"),
+                      child: Text("Opción múltiple"),
                       onPressed: () {
                         Navigator.of(context)
                             .push(MaterialPageRoute(builder: (context) {
@@ -258,7 +258,7 @@ class _PageHotSongsState extends State<_PageHotSongs>
   Widget build(BuildContext context) {
     if (widget.musicList.isEmpty) {
       return Container(
-        child: Center(child: Text("该歌手无热门曲目")),
+        child: Center(child: Text("No hay éxitos de este cantante")),
       );
     }
     return MusicList(
@@ -441,7 +441,7 @@ class _PageArtistIntroductionState extends State<_PageArtistIntroduction>
       child: Container(
         height: 36,
         child: Center(
-          child: Text("完整歌手介绍"),
+          child: Text("Introducción completa al cantante"),
         ),
       ),
     );
@@ -455,7 +455,7 @@ class _PageArtistIntroductionState extends State<_PageArtistIntroduction>
     }
     Widget title = Padding(
         padding: EdgeInsets.symmetric(vertical: 10, horizontal: 8),
-        child: Text(("相关专题文章"),
+        child: Text(("Artículos destacados relacionados"),
             style: TextStyle(
                 fontSize: 15, fontWeight: FontWeight.bold, shadows: [])));
     List<Widget> list = data.map<Widget>((topic) {
@@ -511,7 +511,7 @@ class _PageArtistIntroductionState extends State<_PageArtistIntroduction>
         child: Container(
           height: 56,
           child: Center(
-            child: Text("全部专栏文章"),
+            child: Text("Todas las columnas"),
           ),
         ),
       ));

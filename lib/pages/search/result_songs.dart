@@ -41,7 +41,7 @@ class SongsResultSectionState extends State<SongsResultSection>
                     music:
                         mapJsonToMusic(song, artistKey: "ar", albumKey: "al"));
               } else {
-                showSimpleNotification(context, Text("播放歌曲失败!"),
+                showSimpleNotification(context, Text("No se pudo reproducir la canción!"),
                     leading: Icon(Icons.notification_important),
                     background: Theme.of(context).errorColor);
               }

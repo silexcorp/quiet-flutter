@@ -51,7 +51,7 @@ class _MainPageState extends State<MainPage>
                         children: <Widget>[
                           ListTile(
                             leading: Icon(Icons.settings),
-                            title: Text("设置"),
+                            title: Text("Configurar"),
                             onTap: () {
                               Navigator.pushNamed(context, ROUTE_SETTING);
                             },
@@ -150,10 +150,10 @@ class _AppDrawerHeader extends StatelessWidget {
               Icons.exit_to_app,
               color: Theme.of(context).primaryIconTheme.color,
             ),
-            tooltip: "退出登陆",
+            tooltip: "Cerrar sesión",
             onPressed: () async {
-              if (await showConfirmDialog(context, Text('确认退出登录吗？'),
-                  positiveLabel: '退出登录')) {
+              if (await showConfirmDialog(context, Text('Confirmar cierre de sesión？'),
+                  positiveLabel: 'Cerrar sesión')) {
                 UserAccount.of(context, rebuildOnChange: false).logout();
               }
             },
@@ -177,8 +177,8 @@ class _AppDrawerHeader extends StatelessWidget {
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: <Widget>[
-                Text("登陆网易云音乐"),
-                Text("手机电脑多端同步,尽享海量高品质音乐"),
+                Text("Inicie sesión en Netease Cloud Music"),
+                Text("Sincronización multi-terminal móvil y de computadora, disfrute de música masiva de alta calidad"),
                 SizedBox(height: 8),
                 FlatButton(
                     shape: RoundedRectangleBorder(
@@ -194,7 +194,7 @@ class _AppDrawerHeader extends StatelessWidget {
                       Navigator.pushNamed(context, ROUTE_LOGIN);
                     },
                     textColor: Theme.of(context).primaryTextTheme.body1.color,
-                    child: Text("立即登陆"))
+                    child: Text("Inicia sesión ahora"))
               ],
             ),
           ),

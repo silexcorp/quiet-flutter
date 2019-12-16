@@ -68,7 +68,7 @@ class _EmptyResultSection extends StatelessWidget {
     return Container(
       padding: EdgeInsets.only(top: 50),
       child: Center(
-        child: Text('未找到与"$query"相关的内容'),
+        child: Text('Contenido relacionado con "$query" no encontrado'),
       ),
     );
   }

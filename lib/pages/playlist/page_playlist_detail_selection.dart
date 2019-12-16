@@ -39,10 +39,10 @@ class PlaylistSelectionPageState extends State<PlaylistSelectionPage> {
       key: _scaffoldKey,
       appBar: AppBar(
         leading: BackButton(),
-        title: Text("已选择${selectedList.length}项"),
+        title: Text("Artículo ${selectedList.length} seleccionado"),
         actions: <Widget>[
           FlatButton(
-            child: Text(allSelected ? "取消全选" : "全选",
+            child: Text(allSelected ? "Deseleccionar todo" : "Seleccionar todo",
                 style: Theme.of(context).primaryTextTheme.body1),
             onPressed: () {
               setState(() {
@@ -101,13 +101,13 @@ class PlaylistSelectionPageState extends State<PlaylistSelectionPage> {
                   children: <Widget>[
                     Icon(Icons.play_circle_outline),
                     const SizedBox(height: 2.0),
-                    Text("下一首播放")
+                    Text("Próxima jugada")
                   ],
                 ),
                 onPressed: () async {
                   await quiet.insertToNext2(selectedList);
                   showSimpleNotification(
-                      context, Text("已添加${selectedList.length}首歌曲"));
+                      context, Text("Cancion ${selectedList.length} agregada"));
                 },
               ),
               FlatButton(
@@ -116,7 +116,7 @@ class PlaylistSelectionPageState extends State<PlaylistSelectionPage> {
                   children: <Widget>[
                     Icon(Icons.add_box),
                     const SizedBox(height: 2.0),
-                    Text("加入歌单")
+                    Text("Agregar a la lista de reproducción")
                   ],
                 ),
                 onPressed: () async {
@@ -127,7 +127,7 @@ class PlaylistSelectionPageState extends State<PlaylistSelectionPage> {
                   }
                   if (succeed) {
                     showSimpleNotification(
-                        context, Text("已成功收藏${selectedList.length}首歌曲"));
+                        context, Text("Cancion ${selectedList.length} a favorito con éxito"));
                   } else {
                     showSimpleNotification(context, Text("加入歌单失败"),
                         background: Theme.of(context).errorColor);
@@ -142,7 +142,7 @@ class PlaylistSelectionPageState extends State<PlaylistSelectionPage> {
                         children: <Widget>[
                           Icon(Icons.delete_outline),
                           const SizedBox(height: 2.0),
-                          Text("删除")
+                          Text("Eliminar")
                         ],
                       ),
                       onPressed: () async {
@@ -157,10 +157,10 @@ class PlaylistSelectionPageState extends State<PlaylistSelectionPage> {
                         }
                         if (succeed) {
                           showSimpleNotification(
-                              context, Text("已删除${selectedList.length}首歌曲"),
+                              context, Text("Cancion${selectedList.length} eliminado"),
                               background: Theme.of(context).errorColor);
                         } else {
-                          showSimpleNotification(context, Text("删除失败"),
+                          showSimpleNotification(context, Text("Eliminar fallido"),
                               leading: Icon(Icons.error),
                               background: Theme.of(context).errorColor);
                         }

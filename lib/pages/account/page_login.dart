@@ -33,7 +33,7 @@ class _LoginState extends State<LoginPage> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text("登录"),
+          title: Text("Iniciar sesión"),
         ),
         body: Form(
           key: _formState,
@@ -50,7 +50,7 @@ class _LoginState extends State<LoginPage> {
                   controller: _phoneController,
                   validator: (text) {
                     if (text.trim().isEmpty) {
-                      return "手机号不能为空";
+                      return "El número de teléfono no puede estar vacío.";
                     }
                     return null;
                   },
@@ -58,7 +58,7 @@ class _LoginState extends State<LoginPage> {
                     border: const UnderlineInputBorder(),
                     errorText: _loginFailedMessage,
                     filled: true,
-                    labelText: "手机号码",
+                    labelText: "Número de teléfono",
                   ),
                   keyboardType: TextInputType.number,
                   textInputAction: TextInputAction.next,
@@ -70,7 +70,7 @@ class _LoginState extends State<LoginPage> {
                 PasswordField(
                   validator: (text) {
                     if (text.trim().isEmpty) {
-                      return "密码不能为空";
+                      return "La contraseña no puede estar vacía";
                     }
                     return null;
                   },
@@ -81,7 +81,7 @@ class _LoginState extends State<LoginPage> {
                 ),
                 RaisedButton(
                   onPressed: _onLogin,
-                  child: Text("点击登录",
+                  child: Text("Haga clic para iniciar sesión",
                       style: Theme.of(context).primaryTextTheme.body1),
                   color: Theme.of(context).primaryColor,
                 ),
@@ -101,7 +101,7 @@ class _LoginState extends State<LoginPage> {
         if (result["code"] == 200) {
           Navigator.pop(context); //login succeed
         } else {
-          showSimpleNotification(context, Text(result["msg"] ?? "登录失败"));
+          showSimpleNotification(context, Text(result["msg"] ?? "Error de inicio de sesión"));
         }
       } catch (e) {
         showSimpleNotification(context, Text('$e'));
@@ -135,7 +135,7 @@ class _PasswordFieldState extends State<PasswordField> {
       decoration: InputDecoration(
         border: const UnderlineInputBorder(),
         filled: true,
-        labelText: "密码",
+        labelText: "Contraseña",
         suffixIcon: GestureDetector(
           onTap: () {
             setState(() {
@@ -144,7 +144,7 @@ class _PasswordFieldState extends State<PasswordField> {
           },
           child: Icon(
             _obscureText ? Icons.visibility : Icons.visibility_off,
-            semanticLabel: _obscureText ? '显示密码' : '隐藏密码',
+            semanticLabel: _obscureText ? 'Mostrar contraseña' : 'Ocultar contraseña',
           ),
         ),
       ),

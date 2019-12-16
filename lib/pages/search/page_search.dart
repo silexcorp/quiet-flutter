@@ -196,7 +196,7 @@ class _NeteaseSearchPageState extends State<NeteaseSearchPage> {
       query.isEmpty
           ? null
           : IconButton(
-              tooltip: '清除',
+              tooltip: 'Claro',
               icon: const Icon(Icons.clear),
               onPressed: () {
                 query = '';
@@ -243,13 +243,13 @@ class _EmptyQuerySuggestionSection extends StatelessWidget {
             failedWidgetBuilder: (context, result, msg) => Container(),
             loadingBuilder: (context) {
               return SuggestionSection(
-                title: "热门搜索",
+                title: "Búsquedas populares",
                 content: Loader.buildSimpleLoadingWidget(context),
               );
             },
             builder: (context, result) {
               return SuggestionSection(
-                title: "热门搜索",
+                title: "Búsquedas populares",
                 content: SuggestionSectionContent.from(
                   words: result,
                   suggestionSelectedCallback: suggestionSelectedCallback,
@@ -257,7 +257,7 @@ class _EmptyQuerySuggestionSection extends StatelessWidget {
               );
             }),
         SuggestionSection(
-          title: '搜索记录',
+          title: 'Historial de búsqueda',
           content: SuggestionSectionContent.from(
             words: SearchHistory.of(context).histories,
             suggestionSelectedCallback: suggestionSelectedCallback,

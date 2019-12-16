@@ -9,7 +9,7 @@ class SettingPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('设置'),
+        title: Text('Configurar'),
         titleSpacing: 0,
       ),
       body: Container(
@@ -17,10 +17,10 @@ class SettingPage extends StatelessWidget {
         child: ListView(
           children: <Widget>[
             SettingGroup(
-              title: '通用',
+              title: 'Universal',
               children: <Widget>[
                 ListTile(
-                  title: Text('更换主题'),
+                  title: Text('Cambiar tema'),
                   onTap: () => ThemePicker.show(context),
                 )
               ],

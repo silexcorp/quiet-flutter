@@ -14,7 +14,7 @@ class DailyPlaylistPage extends StatelessWidget {
       appBar: AppBar(
         leading: BackButton(),
         titleSpacing: 0,
-        title: const Text("每日推荐"),
+        title: const Text("Recomendado diariamente"),
         actions: <Widget>[
           IconButton(
               icon: Icon(Icons.help_outline),
@@ -77,7 +77,7 @@ class _Header extends StatelessWidget {
                   color: Theme.of(context).primaryTextTheme.caption.color,
                 ),
                 Text(
-                  "自动生成，每天6:00更新",
+                  "Generado automáticamente, actualizado todos los días a las 6:00",
                   style: Theme.of(context).primaryTextTheme.caption,
                 )
               ],

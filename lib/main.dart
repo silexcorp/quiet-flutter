@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
               return MaterialApp(
                 initialRoute: "/",
                 routes: routes,
-                title: 'Quiet',
+                title: 'Silexcorp',
                 theme: ThemeData(
                   primaryColor: manager.current,
                   textTheme: TextTheme(
@@ -53,7 +53,7 @@ class MyApp extends StatelessWidget {
 class _CopyrightPainter extends CustomPainter {
   final TextPainter _textPainter = TextPainter(
       text: TextSpan(
-        text: "只用作个人学习研究，禁止用于商业及非法用途     只用作个人学习研究，禁止用于商业及非法用途",
+        text: "Uso personal",
         style: TextStyle(color: Colors.grey.withOpacity(0.3)),
       ),
       textDirection: TextDirection.ltr);

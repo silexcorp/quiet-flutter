@@ -14,7 +14,7 @@ class ThemePicker extends StatelessWidget {
     final theme = QuietTheme.of(context);
 
     return SimpleDialog(
-      title: Text('选择主题颜色'),
+      title: Text('Seleccionar color del tema'),
       children: theme.all.map((color) {
         return Material(
           color: color,

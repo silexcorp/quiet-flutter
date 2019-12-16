@@ -13,14 +13,14 @@ class _MyDjPageState extends State<MyDjPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('我的电台'),
+        title: Text('Mi radio'),
       ),
       body: ListView(
         children: <Widget>[
           _ListTitle(
-              title: '我创建的电台(${Counter.of(context).createDjRadioCount})'),
+              title: 'La estación de radio que creé(${Counter.of(context).createDjRadioCount})'),
           _SectionMyCreated(),
-          _ListTitle(title: '我订阅的电台(${Counter.of(context).djRadioCount})'),
+          _ListTitle(title: 'Estaciones de radio a las que me suscribo(${Counter.of(context).djRadioCount})'),
           _SectionSubscribed(),
         ],
       ),
@@ -71,7 +71,7 @@ class DjTile extends StatelessWidget {
                     ),
                     Spacer(),
                     Text(
-                      data['lastProgramName'] ?? '暂无更新',
+                      data['lastProgramName'] ?? 'Sin actualizaciones',
                       style: Theme.of(context).textTheme.caption,
                     ),
                     SizedBox(height: 4),
@@ -128,7 +128,7 @@ class _SectionMyCreated extends StatelessWidget {
               child: ListTile(
                 leading:
                     Icon(Icons.mic_none, color: Theme.of(context).primaryColor),
-                title: Text('申请做主播'),
+                title: Text('Solicitar ancla'),
                 trailing: Icon(Icons.chevron_right),
                 onTap: () {
                   notImplemented(context);
@@ -144,7 +144,7 @@ class _SectionMyCreated extends StatelessWidget {
       return SizedBox(
         height: 200,
         child: Center(
-          child: Text("当前未登录"),
+          child: Text("Actualmente no ha iniciado sesión"),
         ),
       );
     }

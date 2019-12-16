@@ -60,8 +60,8 @@ class _MainPlaylistState extends State<MainPlaylistPage>
                   result.where((p) => p.creator["userId"] != userId).toList();
               return ListView(children: [
                 _PinnedHeader(),
-                _ExpansionPlaylistGroup.fromPlaylist("创建的歌单", created),
-                _ExpansionPlaylistGroup.fromPlaylist("收藏的歌单", subscribed)
+                _ExpansionPlaylistGroup.fromPlaylist("Lista de reproducción creada", created),
+                _ExpansionPlaylistGroup.fromPlaylist("Lista de reproducción favorita", subscribed)
               ]);
             }),
       );
@@ -83,7 +83,7 @@ class _PinnedHeader extends StatelessWidget {
             ? null
             : DividerWrapper(
                 child: ListTile(
-                    title: Text("当前未登录，点击登录!"),
+                    title: Text("Actualmente no ha iniciado sesión, haga clic en Iniciar sesión."),
                     trailing: Icon(Icons.chevron_right),
                     onTap: () {
                       Navigator.pushNamed(context, "/login");
@@ -96,7 +96,7 @@ class _PinnedHeader extends StatelessWidget {
                 Icons.schedule,
                 color: Theme.of(context).primaryColor,
               ),
-              title: Text('播放记录'),
+              title: Text('Jugar historia'),
               onTap: () {
                 if (UserAccount.of(context, rebuildOnChange: false).isLogin) {
                   Navigator.push(context, MaterialPageRoute(builder: (context) {
@@ -117,7 +117,7 @@ class _PinnedHeader extends StatelessWidget {
                 color: Theme.of(context).primaryColor,
               ),
               title: Text.rich(TextSpan(children: [
-                TextSpan(text: '我的电台 '),
+                TextSpan(text: 'Mi radio '),
                 TextSpan(
                     style: const TextStyle(fontSize: 13, color: Colors.grey),
                     text:
@@ -135,7 +135,7 @@ class _PinnedHeader extends StatelessWidget {
                 color: Theme.of(context).primaryColor,
               ),
               title: Text.rich(TextSpan(children: [
-                TextSpan(text: '我的收藏 '),
+                TextSpan(text: 'Mi coleccion '),
                 TextSpan(
                     style: const TextStyle(fontSize: 13, color: Colors.grey),
                     text:
@@ -320,7 +320,7 @@ class _ItemPlaylist extends StatelessWidget {
                             style: Theme.of(context).textTheme.body1,
                           ),
                           Padding(padding: EdgeInsets.only(top: 4)),
-                          Text("${playlist.trackCount}首",
+                          Text("${playlist.trackCount}Primero",
                               style: Theme.of(context).textTheme.caption),
                           Spacer(),
                         ],
@@ -330,11 +330,11 @@ class _ItemPlaylist extends StatelessWidget {
                       itemBuilder: (context) {
                         return [
                           PopupMenuItem(
-                              child: Text("分享"), value: PlaylistOp.share),
+                              child: Text("Compartir"), value: PlaylistOp.share),
                           PopupMenuItem(
-                              child: Text("编辑歌单信息"), value: PlaylistOp.edit),
+                              child: Text("Editar información de la lista de reproducción"), value: PlaylistOp.edit),
                           PopupMenuItem(
-                              child: Text("删除"), value: PlaylistOp.delete),
+                              child: Text("Eliminar"), value: PlaylistOp.delete),
                         ];
                       },
                       onSelected: (op) {

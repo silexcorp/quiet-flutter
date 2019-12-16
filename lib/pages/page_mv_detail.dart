@@ -308,9 +308,9 @@ class _MvInformationSection extends StatelessWidget {
               style: TextStyle(color: Colors.grey),
               child: Row(
                 children: <Widget>[
-                  Text('发布: ${data['publishTime']}'),
+                  Text('Publicar: ${data['publishTime']}'),
                   VerticalDivider(color: Theme.of(context).dividerColor),
-                  Text('播放: ${getFormattedNumber(data['playCount'])}')
+                  Text('Jugar: ${getFormattedNumber(data['playCount'])}')
                 ],
               ),
             )

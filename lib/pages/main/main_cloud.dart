@@ -19,9 +19,9 @@ class CloudPageState extends State<MainCloudPage>
     return ListView(
       children: <Widget>[
         _NavigationLine(),
-        _Header("推荐歌单", () {}),
+        _Header("Lista de reproducción recomendada", () {}),
         _SectionPlaylist(),
-        _Header("最新音乐", () {}),
+        _Header("Musica mas reciente", () {}),
         _SectionNewSongs(),
       ],
     );
@@ -36,13 +36,13 @@ class _NavigationLine extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: <Widget>[
-          _ItemNavigator(Icons.radio, "私人FM", () {
+          _ItemNavigator(Icons.radio, "Privado FM", () {
             notImplemented(context);
           }),
-          _ItemNavigator(Icons.today, "每日推荐", () {
+          _ItemNavigator(Icons.today, "Recomendado diariamente", () {
             Navigator.pushNamed(context, ROUTE_DAILY);
           }),
-          _ItemNavigator(Icons.show_chart, "排行榜", () {
+          _ItemNavigator(Icons.show_chart, "Tabla de clasificación", () {
             Navigator.pushNamed(context, ROUTE_LEADERBOARD);
           }),
         ],

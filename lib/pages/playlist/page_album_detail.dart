@@ -94,7 +94,7 @@ class _AlbumBodyState extends State<_AlbumBody> {
           Column(
             children: <Widget>[
               OpacityTitle(
-                defaultName: "专辑",
+                defaultName: "Álbum",
                 name: widget.album["name"],
                 appBarOpacity: appBarOpacity,
               )
@@ -112,7 +112,7 @@ class _AlbumBodyState extends State<_AlbumBody> {
     }
     if (widget.musicList.isEmpty) {
       return Container(
-        child: Text('暂无音乐'),
+        child: Text('Sin musica'),
       );
     }
     if (index == 1) {
@@ -188,13 +188,13 @@ class _AlbumDetailHeader extends StatelessWidget {
                         child: Padding(
                           padding: const EdgeInsets.only(top: 4, bottom: 4),
                           child: Text(
-                              "歌手: ${artist.map((a) => a.name).join('/')}"),
+                              "Cantante: ${artist.map((a) => a.name).join('/')}"),
                         ),
                         onTap: () {
                           launchArtistDetailPage(context, artist);
                         }),
                     SizedBox(height: 4),
-                    Text("发行时间：${getFormattedTime(album["publishTime"])}")
+                    Text("Tiempo de liberación：${getFormattedTime(album["publishTime"])}")
                   ],
                 ),
               ))

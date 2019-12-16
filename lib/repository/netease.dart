@@ -47,7 +47,7 @@ class NeteaseRepository {
   ///to verify api response is success
   final TaskResultVerify responseVerify = (dynamic result) {
     if (result == null) {
-      return VerifyValue.errorMsg("请求失败");
+      return VerifyValue.errorMsg("Solicitud fallida");
     }
     if (result["code"] != _CODE_SUCCESS) {
       return VerifyValue.errorMsg(

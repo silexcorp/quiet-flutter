@@ -97,7 +97,7 @@ class ArtistTile extends StatelessWidget {
                               size: 16,
                             ),
                             Padding(padding: EdgeInsets.only(left: 2)),
-                            Text("已入驻",
+                            Text("Resuelto",
                                 style: Theme.of(context).textTheme.caption)
                           ])
                   ]..removeWhere((v) => v == null),

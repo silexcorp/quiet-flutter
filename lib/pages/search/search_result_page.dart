@@ -7,7 +7,7 @@ import 'result_songs.dart';
 import 'result_videos.dart';
 
 ///搜索结果分类
-const List<String> SECTIONS = ["单曲", "视频", "歌手", "专辑", "歌单"];
+const List<String> SECTIONS = ["Single "," Video "," Singer "," Album "," Single List "];
 
 class SearchResultPage extends StatefulWidget {
   SearchResultPage({Key key, this.query})

@@ -54,7 +54,7 @@ class _PlayListDetailState extends State<PlaylistDetailPage> {
           children: <Widget>[
             OpacityTitle(
               name: null,
-              defaultName: "歌单",
+              defaultName: "Lista de reproducción",
               appBarOpacity: ValueNotifier(0),
             )
           ],
@@ -74,7 +74,7 @@ class _PlayListDetailState extends State<PlaylistDetailPage> {
                 context,
                 Container(
                   height: 200,
-                  child: Center(child: Text("加载中...")),
+                  child: Center(child: Text("Cargando...")),
                 ));
           },
           failedWidgetBuilder: (context, result, msg) {
@@ -82,7 +82,7 @@ class _PlayListDetailState extends State<PlaylistDetailPage> {
                 context,
                 Container(
                   height: 200,
-                  child: Center(child: Text("加载失败")),
+                  child: Center(child: Text("Carga fallida")),
                 ));
           },
           builder: (context, result) {
@@ -207,7 +207,7 @@ class _PlaylistBodyState extends State<_PlaylistBody> {
                   widget.playlist.musicList.remove(music);
                 });
               }
-              toast(context, result ? '删除成功' : '删除失败');
+              toast(context, result ? 'Eliminado exitosamente' : 'Eliminar fallido');
             },
       onMusicTap: MusicList.defaultOnTap,
       leadingBuilder: MusicList.indexedLeadingBuilder,
@@ -226,12 +226,12 @@ class _PlaylistBodyState extends State<_PlaylistBody> {
             children: <Widget>[
               OpacityTitle(
                 name: widget.playlist.name,
-                defaultName: "歌单",
+                defaultName: "Lista de reproducción",
                 appBarOpacity: appBarOpacity,
                 actions: <Widget>[
                   IconButton(
                       icon: Icon(Icons.search),
-                      tooltip: "歌单内搜索",
+                      tooltip: "Buscar en la lista de reproducción",
                       onPressed: () {
                         showSearch(
                             context: context,
@@ -240,7 +240,7 @@ class _PlaylistBodyState extends State<_PlaylistBody> {
                       }),
                   IconButton(
                       icon: Icon(Icons.more_vert),
-                      tooltip: "更多选项",
+                      tooltip: "Más opciones",
                       onPressed: () {})
                 ],
               )
@@ -260,11 +260,11 @@ class _PlaylistBodyState extends State<_PlaylistBody> {
     } catch (e) {
       succeed = false;
     }
-    String action = !subscribe ? "收藏" : "取消收藏";
+    String action = !subscribe ? "Favorito" : "Cancelar colección";
     if (succeed) {
-      showSimpleNotification(context, Text("$action成功"));
+      showSimpleNotification(context, Text("$action El éxito"));
     } else {
-      showSimpleNotification(context, Text("$action失败"),
+      showSimpleNotification(context, Text("$action Fallar"),
           background: Theme.of(context).errorColor);
     }
     return succeed ? !subscribe : subscribe;
@@ -276,7 +276,7 @@ class _PlaylistBodyState extends State<_PlaylistBody> {
     }
     if (widget.musicList.isEmpty) {
       return Container(
-        child: Text('暂时还没有音乐'),
+        child: Text('Todavia no hay musica'),
       );
     }
 
@@ -379,14 +379,14 @@ class _SubscribeButtonState extends State<_SubscribeButton> {
                 context: context,
                 builder: (context) {
                   return AlertDialog(
-                    content: Text("确定不再收藏此歌单吗?"),
+                    content: Text("¿Estás seguro de que ya no deseas marcar esta lista de favoritos??"),
                     actions: <Widget>[
                       FlatButton(
                           onPressed: () => Navigator.pop(context),
-                          child: Text("取消")),
+                          child: Text("Cancelar")),
                       FlatButton(
                           onPressed: () => Navigator.pop(context, true),
-                          child: Text("不再收藏"))
+                          child: Text("Ya no es favorito"))
                     ],
                   );
                 });
@@ -496,11 +496,11 @@ class DetailHeader extends StatelessWidget {
                     children: <Widget>[
                       _HeaderAction(
                           Icons.comment,
-                          commentCount > 0 ? commentCount.toString() : "评论",
+                          commentCount > 0 ? commentCount.toString() : "Comentarios",
                           onCommentTap),
                       _HeaderAction(
                           Icons.share,
-                          shareCount > 0 ? shareCount.toString() : "分享",
+                          shareCount > 0 ? shareCount.toString() : "Compartir",
                           onShareTap),
                       _HeaderAction(Icons.check_box, "多选", onSelectionTap),
                     ],
@@ -542,7 +542,7 @@ class _PlaylistDetailHeader extends StatelessWidget {
         },
         onSelectionTap: () async {
           if (musicList == null) {
-            showSimpleNotification(context, Text("歌曲未加载,请加载后再试"));
+            showSimpleNotification(context, Text("La canción no se cargó, intente nuevamente después de cargar"));
           } else {
             await Navigator.push(context, MaterialPageRoute(builder: (context) {
               return PlaylistSelectionPage(

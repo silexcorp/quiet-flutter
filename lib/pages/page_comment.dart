@@ -22,7 +22,7 @@ class CommentPage extends StatelessWidget {
         return Scaffold(
           appBar: AppBar(
             leading: BackButton(),
-            title: Text("评论"),
+            title: Text("Comentarios"),
           ),
           body: Loader.buildSimpleFailedWidget(context, result, msg),
         );
@@ -31,7 +31,7 @@ class CommentPage extends StatelessWidget {
         return Scaffold(
           appBar: AppBar(
             leading: BackButton(),
-            title: Text("评论"),
+            title: Text("Comentarios"),
           ),
           body: Loader.buildSimpleLoadingWidget(context),
         );
@@ -40,7 +40,7 @@ class CommentPage extends StatelessWidget {
         return Scaffold(
           appBar: AppBar(
             leading: BackButton(),
-            title: Text("评论(${result["total"]})"),
+            title: Text("Comentarios (${result["total"]})"),
           ),
           body: CommentList(
             threadId: threadId,
@@ -100,7 +100,7 @@ class _CommentInputState extends State<_CommentInput> {
               focusNode: _focusNode,
               controller: _controller,
               decoration:
-                  InputDecoration(hintText: "随乐而起，有感而发", errorText: _error),
+                  InputDecoration(hintText: "Ve con la música, siéntela", errorText: _error),
             ),
           )),
           IconButton(
@@ -125,7 +125,7 @@ class _CommentInputState extends State<_CommentInput> {
                   Loader.of(context).refresh();
                 } else {
                   setState(() {
-                    _error = "发送失败";
+                    _error = "Envío fallido";
                   });
                 }
                 _isPosting = false;
@@ -203,7 +203,7 @@ class _CommentListState extends State<CommentList> {
       items.add(Pair(TYPE_TITLE, widget.threadId));
     }
     if (hotComments.isNotEmpty) {
-      items.add(Pair(TYPE_HEADER, "热门评论")); //hot comment header
+      items.add(Pair(TYPE_HEADER, "Comentarios populares")); //hot comment header
       for (var comment in hotComments) {
         items.add(Pair(TYPE_COMMENT, comment));
       }
@@ -212,7 +212,7 @@ class _CommentListState extends State<CommentList> {
       }
     }
     items.add(
-        Pair(TYPE_HEADER, "最新评论(${comments.length})")); //latest comment header
+        Pair(TYPE_HEADER, "Últimos comentarios(${comments.length})")); //latest comment header
     for (var comment in comments) {
       items.add(Pair(TYPE_COMMENT, comment));
     }
@@ -289,7 +289,7 @@ class _CommentListState extends State<CommentList> {
                         padding: EdgeInsets.symmetric(vertical: 40),
                         child: Center(
                           child: Text(
-                            "暂无评论，欢迎抢沙发",
+                            "Sin comentarios, bienvenidos a agarrar el sofá",
                             style: TextStyle(color: Colors.black54),
                           ),
                         ),
@@ -337,18 +337,18 @@ class _ItemTitle extends StatelessWidget {
                 context: context,
                 builder: (context) {
                   return AlertDialog(
-                    content: Text("开始播放 ${music.title} ?"),
+                    content: Text("Empieza a jugar ${music.title} ?"),
                     actions: <Widget>[
                       FlatButton(
                           onPressed: () {
                             Navigator.pop(context);
                           },
-                          child: Text("取消")),
+                          child: Text("Cancelar")),
                       FlatButton(
                           onPressed: () {
                             Navigator.pop(context, true);
                           },
-                          child: Text("播放")),
+                          child: Text("Jugar")),
                     ],
                   );
                 });
@@ -419,7 +419,7 @@ class _ItemLoadMore extends StatelessWidget {
           Padding(
             padding: EdgeInsets.only(left: 8),
           ),
-          Text("正在加载更多评论...")
+          Text("Cargando más comentarios...")
         ],
       ),
     );
@@ -437,7 +437,7 @@ class _ItemMoreHot extends StatelessWidget {
         padding: EdgeInsets.symmetric(vertical: 16),
         child: Center(
           child: Text(
-            "全部精彩评论 >",
+            "Todas las reseñas maravillosas >",
             style: Theme.of(context).textTheme.caption,
           ),
         ),
@@ -488,13 +488,13 @@ class _ItemCommentState extends State<_ItemComment> {
                 contentPadding: EdgeInsets.only(),
                 children: <Widget>[
                   ListTile(
-                    title: Text("复制"),
+                    title: Text("Copia"),
                     onTap: () {
                       Clipboard.setData(
                           ClipboardData(text: widget.comment["content"]));
                       Navigator.pop(context);
                       Scaffold.of(this.context).showSnackBar(SnackBar(
-                        content: Text("复制成功"),
+                        content: Text("Copia exitosa"),
                         duration: Duration(seconds: 1),
                       ));
                     },

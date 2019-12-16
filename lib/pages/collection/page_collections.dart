@@ -19,7 +19,7 @@ class MyCollectionPage extends StatelessWidget {
         length: 4,
         child: Scaffold(
           appBar: AppBar(
-            title: Text('我的收藏'),
+            title: Text('Mi coleccion'),
             bottom: TabBar(
               tabs: [
                 Tab(text: '专辑'),

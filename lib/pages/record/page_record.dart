@@ -22,9 +22,9 @@ class RecordPage extends StatelessWidget {
         length: 2,
         child: new Scaffold(
           appBar: AppBar(
-            title: Text(username == null ? '听歌排行' : '$username的听歌排行'),
+            title: Text(username == null ? 'Escucha el ranking de música' : '$username Escuchando'),
             bottom: TabBar(
-              tabs: [Tab(text: '最近一周'), Tab(text: '所有时间')],
+              tabs: [Tab(text: 'La semana pasada'), Tab(text: 'Todo el tiempo')],
               indicator: PrimaryTabIndicator(),
               indicatorSize: TabBarIndicatorSize.label,
             ),

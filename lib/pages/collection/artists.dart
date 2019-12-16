@@ -23,7 +23,7 @@ class CollectionArtists extends StatelessWidget {
                                 image: NeteaseImage(artist['img1v1Url']))),
                         title: Text(artist['name']),
                         subtitle: Text(
-                            '专辑:${artist['albumSize']} MV:${artist['mvSize']}'),
+                            'Álbum:${artist['albumSize']} MV:${artist['mvSize']}'),
                         onTap: () {
                           Navigator.push(
                               context,
